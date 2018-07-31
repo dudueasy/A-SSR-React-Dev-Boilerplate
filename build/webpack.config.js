@@ -1,5 +1,6 @@
 const path = require('path')
 const HTMLPlugin = require('html-webpack-plugin')
+// html-webpack-plugin 是一个 webpack plugin, 用于在 build 的时候在指定目录生成一个 HTML 文件
 
 module.exports = {
   // 定义入口文件
