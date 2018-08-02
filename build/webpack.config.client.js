@@ -15,8 +15,9 @@ module.exports = {
     // bundle 输出位置
     path: path.join(__dirname, '../dist') ,
 
-    // 生产环境下(webpack输出文件), 被引用的静态资源的路径(在使用 webpack-dev-server 时并不生效)
-    // publicPath: '/public',
+    // 定义生产环境下(webpack输出文件), 被引用的静态资源的路径(在使用 webpack-dev-server 时并不生效)
+    // 这个设置对于 服务端渲染 很重要
+    publicPath: '/public',
   },
   module:{
     rules:[
@@ -37,6 +38,6 @@ module.exports = {
     ]
   },
   plugins:[
-    new HTMLPlugin()
+    new HTMLPlugin({template: path.join(__dirname,'../client/template.html')})
   ]
 }

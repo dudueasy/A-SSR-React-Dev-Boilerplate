@@ -4,16 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config build/webpack.config.js"
+    "build:client": "webpack --config build/webpack.config.client.js",
+    "build:server": "webpack --config build/webpack.config.server.js",
+    "clear_dist": "rimraf dist",
+    "build": "npm run clear_dist && npm run build:client && npm run build:server",
+    "start": "node server/server.js"
   },
   "author": "Apolo Du",
   "license": "ISC",
   "dependencies": {
-    "webpack": "^3.9.1",
-    "webpack-dev-server": "^2.9.5",
+    "express": "^4.16.3",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "rimraf": "^2.6.2",
+    "webpack": "^3.9.1",
+    "webpack-dev-server": "^2.9.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

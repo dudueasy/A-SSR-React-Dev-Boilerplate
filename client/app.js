@@ -1,7 +1,8 @@
+// client-entry
 import React from 'react'
 import ReactDom from 'react-dom'
 import App from './App.jsx'
 
-ReactDom.render(<App />, document.body)
+ReactDom.hydrate(<App />, document.getElementById('root'))
 
 
