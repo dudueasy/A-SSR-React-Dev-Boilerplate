@@ -33,6 +33,10 @@
   * 使用了 ReactDOMServer API 来渲染bundle
   * 定义了对静态资源的响应
 
+# 实现了热模块更新
+* 在babelrc中添加了plugin ```react-hot-loader/babel```
+* 更新了webpack开发环境的配置
+* 在入口文件中应用react-hot-loade@3 API
 
 
      
