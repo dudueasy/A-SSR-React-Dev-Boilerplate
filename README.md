@@ -50,4 +50,10 @@
   * 定义对静态资源的响应
     * 使用 http-proxy-middleware 中间件, 让 devServer 来代理静态资源的处理
 
-
+# stage7 代码规范化配置
+* 应用 eslint airbnb 规范
+* 配置了 editorconfig 编辑器规则
+* 配置了 webpack 编译前的代码检测
+  * 通过在 webpack rules 中应用 eslint-loader 来实现 js/jsx 代码的检查.
+* 配置了 git 提交前的代码检查
+  * 通过在 npm 包 husky 实现git提交前检查
