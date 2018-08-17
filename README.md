@@ -1,3 +1,11 @@
+# 项目介绍
+* 这是一个初始化的 webpack-react 工程化项目环境, 实现了:
+  * webpack devServer热模块加载
+  * 服务端渲染
+  * 开发时服务端热模块加载
+  * 应用了 eslint airbnb 代码规范, webpack编译前检查, git提交前检查
+  * 以及其他的工程架构优化.
+
 # react 项目初始环境
 * stage1 使用 npm 初始化项目
   * 安装了以下 npm 包
