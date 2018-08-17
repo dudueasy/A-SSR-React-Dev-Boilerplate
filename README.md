@@ -34,11 +34,7 @@
 * 添加了 babel 对 es2015 和 react 的支持 (presets)
 
 # stage4 实现了 nodejs 服务端渲染
-<<<<<<< HEAD
-* 创建了应用于服务端的 webpack 配置 和 入口文件
-=======
 * 创建了应用于服务端的 webpack 配置文件 /build/webpack.config.erver.js 和 入口文件 /server/server.js
->>>>>>> update README.md
 * 定义了npm快捷命令, 用于同时编译 服务端bundle 和 客户端bundle
 * 创建了 nodejs(express) 服务器
   * 使用了 ReactDOMServer API 来渲染bundle
