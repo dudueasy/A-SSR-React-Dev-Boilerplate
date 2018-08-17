@@ -34,14 +34,18 @@
 * 添加了 babel 对 es2015 和 react 的支持 (presets)
 
 # stage4 实现了 nodejs 服务端渲染
+<<<<<<< HEAD
 * 创建了应用于服务端的 webpack 配置 和 入口文件
+=======
+* 创建了应用于服务端的 webpack 配置文件 /build/webpack.config.erver.js 和 入口文件 /server/server.js
+>>>>>>> update README.md
 * 定义了npm快捷命令, 用于同时编译 服务端bundle 和 客户端bundle
 * 创建了 nodejs(express) 服务器
   * 使用了 ReactDOMServer API 来渲染bundle
   * 定义了对静态资源的响应
 
 # stage5 实现了 webpack devServer 热模块更新
-* 在babelrc中添加了 plugin react-hot-loader/babel
+* 在.babelrc中添加了 plugin react-hot-loader/babel
 * 更新了webpack开发环境下 devServer 的配置
 * 在入口文件中应用了 react-hot-loade@3 API
 
@@ -67,6 +71,7 @@
 
 # stage8 工程架构优化
 * 通过 webpack-merge 应用服务端和客户端共有配置
+  * 创建了共有配置文件 webpack.config.base.js
 * 服务端应用 serve-favicon 中间件来响应favicon.ico
 * 服务端代码变更后自动重启服务器
   * 使用 nodemon 和配置文件 nodemon.json 实现自动重启nodejs服务器.
