@@ -1,11 +1,16 @@
 const path = require('path')
 const webpack = require('webpack')
-const HTMLPlugin = require('html-webpack-plugin')
+const webpackMerge = require('webpack-merge')
+
 // html-webpack-plugin 是一个 webpack plugin, 用于在 build 的时候在指定目录生成一个 HTML 文件
+const HTMLPlugin = require('html-webpack-plugin')
+
+// 引用通用webpack配置
+const baseConfig = require('./webpack.config.base')
 
 const isDev = process.env.NODE_ENV === 'development'
 
-let config = {
+let config = webpackMerge(baseConfig, {
   // 定义入口文件
   entry: {
     // 使用 path.join 来获得绝对路径
@@ -22,41 +27,12 @@ let config = {
     // 这个设置对于 服务端渲染 很重要
     publicPath: '/public/',
   },
-  module: {
-    rules: [
-      // 使用 eslint-loader 进行 webpack 编译前代码校验
-      {
-        enforce: "pre",
-        test: /\.(js|jsx)$/,
-        use: 'eslint-loader',
-        exclude: [
-          path.join(__dirname, '../node_modules')
-        ]
-      }
-      ,
-      // 定义编译 jsx 文件使用的loader(babel-loader)
-      {
-        test: /\.jsx$/,
-        use: 'babel-loader'
-      },
-      // 定义 js 文件使用的 loader
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        // 排除 node_modules 目录
-        exclude: [
-          path.join(__dirname, '../node_modules')
-        ]
-      }
-    ]
-  },
   plugins: [
     new HTMLPlugin({template: path.join(__dirname, '../client/template.html')})
   ]
-}
+})
 
 if (isDev) {
-
   console.log('current env is development')
 
   // 实现热模块更新的 entry 配置 (将react-hot-loader提供的插件一并打包)
@@ -85,9 +61,7 @@ if (isDev) {
       index: '/public/index.html'
     },
   }
-
   config.plugins.push(new webpack.HotModuleReplacementPlugin())
-
 }
 
 module.exports = config

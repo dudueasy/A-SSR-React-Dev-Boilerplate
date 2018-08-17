@@ -1,6 +1,8 @@
 const path = require('path')
+const webpackMerge = require('webpack-merge')
+const baseConfig = require('./webpack.config.base')
 
-module.exports = {
+module.exports = webpackMerge(baseConfig, {
   // 定义构建目标为 nodejs 环境
   target: 'node',
   // 定义入口文件
@@ -22,31 +24,4 @@ module.exports = {
     // bundle 中的模块引用使用 commonjs 规范来处理 (适用于 nodejs 环境)
     libraryTarget: "commonjs2"
   },
-  module: {
-    rules: [
-      // 使用 eslint-loader 进行 webpack 编译前代码校验
-      {
-        enforce: "pre",
-        test: /\.(js|jsx)$/,
-        use: 'eslint-loader',
-        exclude: [
-          path.join(__dirname, '../node_modules')
-        ]
-      },
-      // 定义编译 jsx 文件使用的loader(转换 jsx 代码)
-      {
-        test: /\.jsx$/,
-        use: 'babel-loader'
-      },
-      // 定义 js 文件使用的 loader (转换 es6 代码)
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        // 排除 node_modules 目录
-        exclude: [
-          path.join(__dirname, '../node_modules')
-        ]
-      }
-    ]
-  },
-}
+})

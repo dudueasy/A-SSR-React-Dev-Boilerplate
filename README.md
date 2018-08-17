@@ -54,6 +54,12 @@
 * 应用 eslint airbnb 规范
 * 配置了 editorconfig 编辑器规则
 * 配置了 webpack 编译前的代码检测
-  * 通过在 webpack rules 中应用 eslint-loader 来实现 js/jsx 代码的检查.
+  * 通过在 webpack rules 中应用 eslint-loader 来实现 js/jsx 代码的检查
 * 配置了 git 提交前的代码检查
   * 通过在 npm 包 husky 实现git提交前检查
+
+# stage8 工程架构优化
+* 通过 webpack-merge 应用服务端和客户端共有配置
+* 服务端应用 serve-favicon 中间件来响应favicon.ico
+* 服务端代码变更后自动重启服务器
+  * 使用 nodemon 和配置文件 nodemon.json 实现自动重启nodejs服务器.
