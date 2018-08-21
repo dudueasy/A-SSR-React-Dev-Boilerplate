@@ -79,7 +79,7 @@ npm run dev:server
 * 配置了 webpack 编译前的代码检测
   * 通过在 webpack rules 中应用 eslint-loader 来实现 js/jsx 代码的检查
 * 配置了 git 提交前的代码检查
-  * 通过在 npm 包 husky 实现git提交前检查
+  * 通过 npm 包 husky 实现git提交前检查
 
 ## stage8 工程架构优化 (current stage)
 * 通过 webpack-merge 应用服务端和客户端共有配置
