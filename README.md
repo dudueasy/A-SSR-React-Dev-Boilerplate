@@ -4,7 +4,7 @@
   * 服务端渲染
   * 开发时服务端热模块加载
   * 应用了 eslint airbnb 代码规范, webpack编译前检查, git提交前检查
-  * 以及其他的工程架构优化.
+  * 其他的工程架构优化.
 
 # 项目入口
 * 客户端入口: client/app.js
@@ -49,7 +49,7 @@ npm run dev:server
 * 添加了 babel 配置文件 .babelrc
 * 添加了 babel 对 es2015 和 react 的支持 (presets)
 
-## stage4 实现了 nodejs 服务端渲染
+## stage4 实现了react 组件在 nodejs 服务器上的渲染(服务端渲染)
 * 创建了应用于服务端的 webpack 配置文件 /build/webpack.config.erver.js 和 入口文件 /server/server.js
 * 定义了npm快捷命令, 用于同时编译 服务端bundle 和 客户端bundle
 * 创建了 nodejs(express) 服务器
@@ -85,5 +85,5 @@ npm run dev:server
 * 通过 webpack-merge 应用服务端和客户端共有配置
   * 创建了共有配置文件 webpack.config.base.js
 * 服务端应用 serve-favicon 中间件来响应favicon.ico
-* 服务端代码变更后自动重启服务器
+* 配置服务端代码变更后自动重启服务器
   * 使用 nodemon 和配置文件 nodemon.json 实现自动重启nodejs服务器.
